@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { Outlet, NavLink, useLocation, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useNotifications } from "@/contexts/NotificationsContext";
@@ -34,16 +34,27 @@ const MainLayout = () => {
     { path: "/profile", icon: <User size={24} />, label: "Profile" },
   ];
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      // The redirect will be handled by the AuthContext
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-white border-b shadow-sm p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
-              <span className="text-white font-bold text-lg">S</span>
-            </div>
-            <h1 className="text-xl font-bold text-primary">SkillLink</h1>
+            <Link to="/dashboard" className="flex items-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
+                <span className="text-white font-bold text-lg">S</span>
+              </div>
+              <h1 className="text-xl font-bold text-primary">SkillLink</h1>
+            </Link>
           </div>
           
           <div className="flex items-center space-x-2">
@@ -71,7 +82,7 @@ const MainLayout = () => {
               )}
             </div>
             
-            <Button size="sm" variant="outline" onClick={() => logout()}>
+            <Button size="sm" variant="outline" onClick={handleLogout}>
               {translate("logout")}
             </Button>
           </div>
@@ -108,10 +119,12 @@ const MainLayout = () => {
       <nav className="fixed left-0 top-0 h-full w-64 bg-white border-r shadow-sm p-4 hidden md:block">
         <div className="flex flex-col h-full">
           <div className="mb-6 flex items-center">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <h1 className="text-2xl font-bold text-primary">SkillLink</h1>
+            <Link to="/dashboard" className="flex items-center">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
+                <span className="text-white font-bold text-xl">S</span>
+              </div>
+              <h1 className="text-2xl font-bold text-primary">SkillLink</h1>
+            </Link>
           </div>
           
           <div className="flex flex-col space-y-1 flex-1">
