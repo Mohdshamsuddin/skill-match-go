@@ -1,7 +1,6 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
 
 type UserType = {
   uid: string;
@@ -30,7 +29,6 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<UserType>(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
   
   // Mock Firebase Auth for now
   useEffect(() => {
@@ -61,11 +59,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.setItem('currentUser', JSON.stringify(newUser));
       
       toast.success("Account created successfully!");
-      navigate("/dashboard");
+      return Promise.resolve();
     } catch (error) {
       console.error(error);
       toast.error("Failed to create an account.");
-      throw error;
+      return Promise.reject(error);
     } finally {
       setLoading(false);
     }
@@ -90,11 +88,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.setItem('currentUser', JSON.stringify(user));
       
       toast.success("Logged in successfully!");
-      navigate("/dashboard");
+      return Promise.resolve();
     } catch (error) {
       console.error(error);
       toast.error("Failed to log in.");
-      throw error;
+      return Promise.reject(error);
     } finally {
       setLoading(false);
     }
@@ -112,10 +110,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       // Store phone number temporarily
       sessionStorage.setItem('pendingPhoneAuth', phoneNumber);
+      return Promise.resolve();
     } catch (error) {
       console.error(error);
       toast.error("Failed to send verification code.");
-      throw error;
+      return Promise.reject(error);
     } finally {
       setLoading(false);
     }
@@ -147,14 +146,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         sessionStorage.removeItem('pendingPhoneAuth');
         
         toast.success("Phone verified successfully!");
-        navigate("/dashboard");
+        return Promise.resolve();
       } else {
         throw new Error("Invalid verification code");
       }
     } catch (error) {
       console.error(error);
       toast.error(error instanceof Error ? error.message : "Failed to verify code.");
-      throw error;
+      return Promise.reject(error);
     } finally {
       setLoading(false);
     }
@@ -170,11 +169,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.removeItem('currentUser');
       
       toast.success("Logged out successfully!");
-      navigate("/login");
+      return Promise.resolve();
     } catch (error) {
       console.error(error);
       toast.error("Failed to log out.");
-      throw error;
+      return Promise.reject(error);
     }
   };
 
@@ -186,10 +185,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       toast.success("Password reset email sent!");
+      return Promise.resolve();
     } catch (error) {
       console.error(error);
       toast.error("Failed to send password reset email.");
-      throw error;
+      return Promise.reject(error);
     } finally {
       setLoading(false);
     }
@@ -209,10 +209,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.setItem('currentUser', JSON.stringify(updatedUser));
       
       toast.success("Profile updated successfully!");
+      return Promise.resolve();
     } catch (error) {
       console.error(error);
       toast.error("Failed to update profile.");
-      throw error;
+      return Promise.reject(error);
     } finally {
       setLoading(false);
     }
