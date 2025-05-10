@@ -6,12 +6,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useNotifications } from "@/contexts/NotificationsContext";
 import { 
   Home, 
-  BriefcaseBusiness, 
+  Briefcase, 
   User, 
   MessageCircle, 
   Settings,
   BookmarkCheck,
-  Bell
+  Bell,
+  Wand
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,7 +28,7 @@ const MainLayout = () => {
 
   const navItems = [
     { path: "/dashboard", icon: <Home size={24} />, label: "Home" },
-    { path: "/jobs", icon: <BriefcaseBusiness size={24} />, label: "Jobs" },
+    { path: "/jobs", icon: <Briefcase size={24} />, label: "Jobs" },
     { path: "/saved-jobs", icon: <BookmarkCheck size={24} />, label: "Saved" },
     { path: "/chat", icon: <MessageCircle size={24} />, label: "Chat" },
     { path: "/profile", icon: <User size={24} />, label: "Profile" },
@@ -39,7 +40,10 @@ const MainLayout = () => {
       <header className="sticky top-0 z-10 bg-white border-b shadow-sm p-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold text-primary">Inclusive Worker</h1>
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
+              <span className="text-white font-bold text-lg">S</span>
+            </div>
+            <h1 className="text-xl font-bold text-primary">SkillLink</h1>
           </div>
           
           <div className="flex items-center space-x-2">
@@ -103,8 +107,11 @@ const MainLayout = () => {
       {/* Desktop sidebar - hidden on mobile */}
       <nav className="fixed left-0 top-0 h-full w-64 bg-white border-r shadow-sm p-4 hidden md:block">
         <div className="flex flex-col h-full">
-          <div className="mb-6">
-            <h1 className="text-2xl font-bold text-primary">Inclusive Worker</h1>
+          <div className="mb-6 flex items-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
+              <span className="text-white font-bold text-xl">S</span>
+            </div>
+            <h1 className="text-2xl font-bold text-primary">SkillLink</h1>
           </div>
           
           <div className="flex flex-col space-y-1 flex-1">
