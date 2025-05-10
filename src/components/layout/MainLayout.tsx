@@ -49,9 +49,11 @@ const MainLayout = () => {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/dashboard" className="flex items-center">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
+              <img 
+                src="/lovable-uploads/24e49bd2-0ac7-41c7-8863-9350101542bf.png" 
+                alt="SkillLink Logo" 
+                className="h-10 w-10 mr-2"
+              />
               <h1 className="text-xl font-bold text-primary">SkillLink</h1>
             </Link>
           </div>
@@ -119,9 +121,11 @@ const MainLayout = () => {
         <div className="flex flex-col h-full">
           <div className="mb-6 flex items-center">
             <Link to="/dashboard" className="flex items-center">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
+              <img 
+                src="/lovable-uploads/24e49bd2-0ac7-41c7-8863-9350101542bf.png" 
+                alt="SkillLink Logo" 
+                className="h-12 w-12 mr-2"
+              />
               <h1 className="text-2xl font-bold text-primary">SkillLink</h1>
             </Link>
           </div>

@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -14,9 +13,11 @@ const Index = () => {
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <div className="flex items-center">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
+            <img 
+              src="/lovable-uploads/24e49bd2-0ac7-41c7-8863-9350101542bf.png" 
+              alt="SkillLink Logo" 
+              className="h-12 w-12 mr-3"
+            />
             <h1 className="text-2xl font-bold text-primary">SkillLink</h1>
           </div>
           <div className="flex items-center space-x-4">
@@ -61,9 +62,11 @@ const Index = () => {
           <div className="md:w-1/2 md:pl-12">
             <div className="bg-white rounded-lg p-6 shadow-lg">
               <div className="flex items-center justify-center h-full">
-                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                  <span className="text-white font-bold text-6xl">S</span>
-                </div>
+                <img 
+                  src="/lovable-uploads/24e49bd2-0ac7-41c7-8863-9350101542bf.png" 
+                  alt="SkillLink Logo" 
+                  className="h-40 w-40"
+                />
               </div>
             </div>
           </div>
@@ -154,9 +157,11 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-2">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
+                <img 
+                  src="/lovable-uploads/24e49bd2-0ac7-41c7-8863-9350101542bf.png" 
+                  alt="SkillLink Logo" 
+                  className="h-8 w-8 mr-2"
+                />
                 <h3 className="text-xl font-bold">SkillLink</h3>
               </div>
               <p className="text-gray-400">
