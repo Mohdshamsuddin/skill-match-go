@@ -1,8 +1,9 @@
+
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/common/LanguageSelector';
-import { Briefcase, User, MapPin, MessageCircle, Wand } from 'lucide-react';
+import { Briefcase, User, MapPin, MessageCircle } from 'lucide-react';
 
 const Index = () => {
   const { translate } = useLanguage();
@@ -76,7 +77,7 @@ const Index = () => {
             {translate("app_features")}
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col items-center text-center">
               <div className="bg-primary/10 p-4 rounded-full mb-4">
                 <User size={32} className="text-primary" />
@@ -117,23 +118,13 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col items-center text-center">
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col items-center text-center lg:col-span-4">
               <div className="bg-primary/10 p-4 rounded-full mb-4">
                 <MessageCircle size={32} className="text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">{translate("chat with us")}</h3>
               <p className="text-gray-600">
                 {translate("direct_chat_description")}
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col items-center text-center lg:col-span-5">
-              <div className="bg-primary/10 p-4 rounded-full mb-4">
-                <Wand size={32} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{translate("generative ai")}</h3>
-              <p className="text-gray-600">
-                {translate("Use AI to enhance your job search and application process")}
               </p>
             </div>
           </div>
