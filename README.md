@@ -35,7 +35,9 @@ This project is built with:
 
 ## 🧑‍💻 Author
 **Mohd Abdul Baseer**
+
 **Mohammed faizullah**
+
 **Syed Hussain Ali**
 
 ---
