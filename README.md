@@ -6,13 +6,13 @@
 
 # SkillLink App
 
-**SkillLink** is a simple and intuitive mobile app designed to help unskilled laborers find job opportunities easily. The app is built using **Lovable AI** and packaged using **Applics** for Android devices.
+**SkillLink** is a simple and intuitive mobile app designed to help unskilled laborers find job opportunities easily. The app is built using **Lovable AI** and packaged using **Applix** for Android devices.
 
 ## 🚀 Features
 - ✅ Easy-to-use and accessible interface
 - 🔍 Job search tailored for unskilled laborers
 - 🤖 Built with Lovable AI
-- 📦 Packaged using Applics
+- 📦 Packaged using Applix
 
 ## What technologies are used for this project?
 
