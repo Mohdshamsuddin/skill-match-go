@@ -42,5 +42,5 @@ This project is built with:
 
 ---
 
-> Built with ❤️ using [Lovable](https://lovable.dev) and [Applics](https://applics.dev)
+> Built with ❤️ using [Lovable](https://lovable.dev) and [Applix](https://appilix.com/)
 
